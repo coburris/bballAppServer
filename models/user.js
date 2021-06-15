@@ -18,7 +18,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.BOOLEAN,
             allowNull: false
         } 
-
     })
     return User;
 }

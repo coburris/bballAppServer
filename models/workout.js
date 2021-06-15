@@ -1,3 +1,5 @@
+const sequelize = require('../db')
+
 module.exports = (sequelize, DataTypes) => {
     const Workout = sequelize.define('workout', {
         exercise: {
@@ -6,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
             unique: true
         },
         duration: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: true,
         },
         reps: {
@@ -25,11 +27,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: true
         },
-        userID: {
-            type: DataTypes.STRING,
-            allowNull: false
+        owner: {
+            type: DataTypes.INTEGER,
         }
-
     })
     return Workout;
 }
